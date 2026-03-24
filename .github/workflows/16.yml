@@ -191,11 +191,11 @@ jobs:
           echo "$DTB_FILES"
           
           # 根据设备名 cupid 选择 dtb 文件
-          CUPID_DTB=$(echo "$DTB_FILES" | grep -E "cupid|sm8250" | head -n1)
+          CUPID_DTB=$(echo "$DTB_FILES" | grep -E "cupid|sm8450" | head -n1)
           if [ -z "$CUPID_DTB" ]; then
             # 如果没有匹配的，取第一个 dtb
             CUPID_DTB=$(echo "$DTB_FILES" | head -n1)
-            echo "警告：未找到包含 cupid 或 sm8250 的 dtb 文件，使用第一个 dtb: $CUPID_DTB"
+            echo "警告：未找到包含 cupid 或 sm8450 的 dtb 文件，使用第一个 dtb: $CUPID_DTB"
           else
             echo "找到匹配的设备树文件：$CUPID_DTB"
           fi
